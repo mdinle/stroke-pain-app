@@ -10,10 +10,25 @@ A two-part application for predicting stroke-affected side and pain levels using
 ## How to Run Locally
 
 ### Backend
+
+## Prerequisites
+- [Docker](https://www.docker.com/products/docker-desktop) installed  
+- Model files downloaded (see below)
+
 ```bash
 cd backend
 docker build -t stroke-pain-backend .
 docker run -p 8000:8000 stroke-pain-backend
+```
+### Frontend
+
+## Prerequisites
+- [Node.js & npm](https://nodejs.org/) installed
+
+```bash
+cd frontend
+npm install
+npm run dev
 ```
 
 ## Download Trained Models
