@@ -19,7 +19,7 @@
 
     <!-- PDF Viewer -->
     <div v-if="selectedDoc">
-      <h5 class="mb-2">Viewingg: {{ selectedDoc.name }}</h5>
+      <h5 class="mb-2">Viewing: {{ selectedDoc.name }}</h5>
       <iframe
           :src="`/docs/${selectedDoc.filename}`"
           width="100%"
