@@ -16,6 +16,9 @@
       <li class="nav-item">
         <router-link to="/predict" class="nav-link">Predict</router-link>
       </li>
+      <li class="nav-item">
+        <router-link to="/Docs" class="nav-link">Docs</router-link>
+      </li>
     </ul>
   </div>
 </nav>
