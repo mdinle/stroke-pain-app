@@ -14,6 +14,7 @@ A two-part application for predicting stroke-affected side and pain levels using
 cd backend
 docker build -t stroke-pain-backend .
 docker run -p 8000:8000 stroke-pain-backend
+```
 
 ## Download Trained Models
 
