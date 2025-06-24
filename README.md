@@ -26,4 +26,8 @@ You can download them here:
 
 Place them in:
 
-backend/models/
+stroke-pain-app/
+├── backend/
+│ └── models/
+│ ├── cnn_stroke_model.keras
+│ └── pain_model.pth
