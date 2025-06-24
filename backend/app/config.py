@@ -1,0 +1,9 @@
+MODEL_DIR = "models"
+STROKE_MODEL_PATH = f"{MODEL_DIR}/cnn_stroke_model.keras"
+PAIN_MODEL_PATH = f"{MODEL_DIR}/pain_model.pth"
+
+IMG_SIZE = (224, 224)
+NORMALIZATION_MEAN = [0.485, 0.456, 0.406]
+NORMALIZATION_STD = [0.229, 0.224, 0.225]
+
+DEVICE = "cpu"
