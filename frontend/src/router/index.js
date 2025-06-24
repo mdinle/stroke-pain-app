@@ -4,6 +4,7 @@ import HomePage from '@/views/HomePage.vue'
 import PredictPage from '@/views/PredictPage.vue'
 import LoginForm from '@/components/LoginForm.vue'
 import RegisterForm from '@/components/RegisterForm.vue'
+import Docs from '@/views/DocsPage.vue'
 
 const routes = [
   { path: '/', component: HomePage },
@@ -28,6 +29,7 @@ const routes = [
     component: PredictPage,
     meta: { requiresAuth: true },
   },
+  { path: '/docs', name: 'Docs', component: Docs }
 ];
 
 const router = createRouter({
