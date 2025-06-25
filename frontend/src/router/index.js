@@ -5,14 +5,7 @@ import PredictPage from '@/views/PredictPage.vue'
 import LoginForm from '@/components/LoginForm.vue'
 import RegisterForm from '@/components/RegisterForm.vue'
 import Docs from '@/views/DocsPage.vue'
-import Setup from '@/views/Setup.vue'  // case sensitive!
-
-const routes = [
-  { path: '/', name: 'Home', component: HomePage },
-  { path: '/predict', name: 'Predict', component: PredictPage },
-  { path: '/docs', name: 'Docs', component: Docs },
-  { path: '/setup', name: 'Setup', component: Setup }
-]
+import Setup from '@/views/SetupPage.vue'  // case sensitive!
 
 const routes = [
   { path: '/', component: HomePage },
@@ -37,7 +30,7 @@ const routes = [
     component: PredictPage,
     meta: { requiresAuth: true },
   },
-  { path: '/docs', name: 'Docs', component: Docs }
+  { path: '/docs', name: 'Docs', component: Docs },
   { path: '/setup', name: 'Setup', component: Setup }
 ];
 
