@@ -19,7 +19,7 @@
 
     <!-- PDF Viewer -->
     <div v-if="selectedDoc">
-      <h5 class="mb-2">Viewingg: {{ selectedDoc.name }}</h5>
+      <h5 class="mb-2">Viewing: {{ selectedDoc.name }}</h5>
       <iframe
           :src="`/docs/${selectedDoc.filename}`"
           width="100%"
@@ -36,7 +36,9 @@ import { ref } from 'vue'
 const docs = [
   { name: 'Dataset Description', filename: 'dataset_description.pdf' },
   { name: 'Models Overview', filename: 'model_overview.pdf' },
-  { name: 'Technical Overview', filename: 'tec_overview.pdf' }
+  { name: 'Technical Overview', filename: 'tec_overview.pdf' },
+  { name: 'Pain detecting code file', filename: 'pain_model_code_and_results.pdf' }
+
 ]
 
 const selectedDoc = ref(null)
