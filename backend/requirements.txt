@@ -8,3 +8,7 @@ numpy
 opencv-python
 mediapipe
 python-multipart
+sqlalchemy
+passlib[bcrypt]
+python-jose[cryptography]
+pydantic
