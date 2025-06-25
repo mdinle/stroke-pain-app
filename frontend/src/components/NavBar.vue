@@ -19,6 +19,15 @@
         <li class="nav-item">
         <router-link to="/Docs" class="nav-link">Docs</router-link>
       </li>
+      <li class="nav-item">
+        <router-link to="/predict" class="nav-link">Predict</router-link>
+      </li>
+      <li class="nav-item">
+        <router-link to="/Setup" class="nav-link">Setup Instructions</router-link>
+      </li>
+    </ul>
+  </div>
+  
       </ul>
 
       <template v-if="isLoggedIn">
