@@ -1,6 +1,20 @@
 <template>
   <div class="container mt-4">
-    <h2 class="mb-4">Stroke & Pain Prediction</h2>
+    <h2 class="mb-2">Stroke & Pain Prediction</h2>
+
+  <!-- Description Section -->
+<div class="mb-4 text-muted small">
+  <p>ℹ️ <strong>Stroke Model Output</strong><br>
+  Output is between 0 and 1.<br>
+  Closer to <strong>0</strong>: left side is affected<br>
+  Closer to <strong>1</strong>: right side is affected</p>
+
+  <p>ℹ️ <strong>PSPI Score Scale</strong><br>
+  Pain score ranges from <strong>0 to 11</strong>.<br>
+  Closer to <strong>0</strong>: low pain or no pain<br>
+  Closer to <strong>10+</strong>: significant pain detected</p>
+</div>
+
 
     <!-- Toggle between Upload or Live Camera -->
     <div class="btn-group mb-3" role="group">

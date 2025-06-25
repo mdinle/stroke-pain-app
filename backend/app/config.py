@@ -1,6 +1,6 @@
 MODEL_DIR = "models"
 STROKE_MODEL_PATH = f"{MODEL_DIR}/cnn_stroke_model.keras"
-PAIN_MODEL_PATH = f"{MODEL_DIR}/pain_model.pth"
+PAIN_MODEL_PATH = f"{MODEL_DIR}/pain_model.pt"
 
 IMG_SIZE = (224, 224)
 NORMALIZATION_MEAN = [0.485, 0.456, 0.406]
