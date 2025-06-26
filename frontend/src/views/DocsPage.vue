@@ -36,7 +36,8 @@ import { ref } from 'vue'
 const docs = [
   { name: 'Dataset Description', filename: 'dataset_description.pdf' },
   { name: 'Models Overview', filename: 'model_overview.pdf' },
-  { name: 'Technical Overview', filename: 'tec_overview.pdf' }
+  { name: 'Technical Overview', filename: 'tec_overview.pdf' },
+  { name: 'Pain Model Documentation', filename: 'pain_model_code_and_results.pdf' },
 ]
 
 const selectedDoc = ref(null)
