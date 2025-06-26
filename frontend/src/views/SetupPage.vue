@@ -1,21 +1,48 @@
 <template>
   <div class="container mt-5">
-    <h1 class="mb-4 fw-bold">Project Setup & Installation Guide</h1>
+    <!-- Deployed App Info -->
+    <section class="mb-5 text-center">
+      <h1 class="fw-bold mb-3">Stroke Pain Prediction App</h1>
+      <p class="lead">
+        🔗 The application is live at:
+        <a
+          href="https://strokepain-frontend-app.azurewebsites.net/"
+          target="_blank"
+          rel="noopener"
+          class="fw-semibold"
+        >
+          strokepain-frontend-app.azurewebsites.net
+        </a>
+      </p>
+    </section>
+
+    <!-- Intro -->
+    <section class="mb-4">
+      <h2 class="h5 mb-2">Local Deployment Guide</h2>
+      <p>
+        This guide helps you set up the project locally for development and testing.
+        Use the credentials below to log in:
+      </p>
+      <ul class="list-unstyled ms-3">
+        <li>• <strong>Username:</strong> admin</li>
+        <li>• <strong>Password:</strong> admin</li>
+      </ul>
+    </section>
 
     <!-- Installation -->
     <section class="mb-5">
-      <h2 class="h5 mb-2">Installation</h2>
-      <p>Install Python 3.8+ and Node.js 16+, then clone the repo:</p>
+      <h2 class="h5 mb-2">1. Installation</h2>
+      <p>Ensure you have Python 3.8+ and Node.js 16+ installed. Then clone the repository:</p>
       <pre class="bg-light p-3 rounded"><code>
 # Clone the repository
-git clone https://github.com/your-org/your-project.git
-cd your-project
+git clone https://github.com/mdinle/stroke-pain-app.git
+cd stroke-pain-app
       </code></pre>
     </section>
 
     <!-- Backend Setup -->
     <section class="mb-5">
-      <h2 class="h5 mb-2">Backend Setup (FastAPI)</h2>
+      <h2 class="h5 mb-2">2. Backend Setup (FastAPI)</h2>
       <pre class="bg-light p-3 rounded"><code>
 # Create and activate virtual environment
 python -m venv venv
@@ -33,7 +60,7 @@ uvicorn backend.app:app --reload
 
     <!-- Frontend Setup -->
     <section class="mb-5">
-      <h2 class="h5 mb-2">Frontend Setup (Vue 3)</h2>
+      <h2 class="h5 mb-2">3. Frontend Setup (Vue 3)</h2>
       <pre class="bg-light p-3 rounded"><code>
 cd frontend
 npm install
@@ -45,8 +72,8 @@ npm run dev
 
     <!-- Pretrained Model -->
     <section class="mb-5">
-      <h2 class="h5 mb-2">Download Pretrained Model</h2>
-      <p>Place the file below in the <code>/models</code> folder inside the backend:</p>
+      <h2 class="h5 mb-2">4. Download Pretrained Model</h2>
+      <p>Place the downloaded model file in the <code>/models</code> folder under the backend directory:</p>
       <a
         href="/models/best_model.pt"
         class="btn btn-primary mt-2"
@@ -56,8 +83,8 @@ npm run dev
 
     <!-- GitHub Repository -->
     <section class="mb-5">
-      <h2 class="h5 mb-2">GitHub Repository</h2>
-      <p>You can view the full source code here:</p>
+      <h2 class="h5 mb-2">5. GitHub Repository</h2>
+      <p>View the complete source code on GitHub:</p>
       <a
         href="https://github.com/mdinle/stroke-pain-app.git"
         class="btn btn-outline-dark mt-2"
@@ -70,11 +97,11 @@ npm run dev
 
     <!-- Final Notes -->
     <section class="mb-5">
-      <h2 class="h5 mb-2">Final Notes</h2>
+      <h2 class="h5 mb-2">6. Final Notes</h2>
       <ul class="list-unstyled ms-3">
-        <li>• Start the backend first before opening the frontend.</li>
-        <li>• Frontend connects automatically to the backend.</li>
-        <li>• Use <code>/docs</code> in the backend to test API endpoints.</li>
+        <li>• Start the backend before launching the frontend.</li>
+        <li>• The frontend will connect to the backend automatically.</li>
+        <li>• Use <code>/docs</code> (e.g., http://localhost:8000/docs) to test API endpoints.</li>
       </ul>
     </section>
   </div>
