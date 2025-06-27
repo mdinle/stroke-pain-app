@@ -1,94 +1,119 @@
 <template>
-  <div class="container mx-auto p-6 max-w-5xl">
-    <h1 class="text-3xl font-bold mb-6">Project Setup & Installation Guide</h1>
+  <div class="container mt-5">
+    <!-- Deployed App Info -->
+    <section class="mb-5 text-center">
+      <h1 class="fw-bold mb-3">Stroke Pain Prediction App</h1>
+      <p class="lead">
+        🔗 The application is live at:
+        <a
+          href="https://strokepain-frontend-app.azurewebsites.net/"
+          target="_blank"
+          rel="noopener"
+          class="fw-semibold"
+        >
+          strokepain-frontend-app.azurewebsites.net
+        </a>
+      </p>
+    </section>
+
+    <!-- Intro -->
+    <section class="mb-4">
+      <h2 class="h5 mb-2">Local Deployment Guide</h2>
+      <p>
+        This guide helps you set up the project locally for development and testing.
+        Use the credentials below to log in:
+      </p>
+      <ul class="list-unstyled ms-3">
+        <li>• <strong>Username:</strong> admin</li>
+        <li>• <strong>Password:</strong> admin</li>
+      </ul>
+    </section>
 
     <!-- Installation -->
-    <section class="mb-10">
-      <h2 class="text-xl font-semibold mb-2">Installation</h2>
-      <p>This guide helps you set up the full project (frontend and backend) locally. Make sure you have Python 3.8+ and Node.js 16+ installed.</p>
-      <pre class="bg-gray-100 p-4 rounded text-sm overflow-auto">
+    <section class="mb-5">
+      <h2 class="h5 mb-2">1. Installation</h2>
+      <p>Ensure you have Python 3.8+ and Node.js 16+ installed. Then clone the repository:</p>
+      <pre class="bg-light p-3 rounded"><code>
 # Clone the repository
-git clone https://github.com/your-org/your-project.git
-cd your-project
-      </pre>
+git clone https://github.com/mdinle/stroke-pain-app.git
+cd stroke-pain-app
+      </code></pre>
     </section>
 
     <!-- Backend Setup -->
-    <section class="mb-10">
-      <h2 class="text-xl font-semibold mb-2">Backend Setup (FastAPI)</h2>
-      <pre class="bg-gray-100 p-4 rounded text-sm overflow-auto">
-# Create and activate a virtual environment
+    <section class="mb-5">
+      <h2 class="h5 mb-2">2. Backend Setup (FastAPI)</h2>
+      <pre class="bg-light p-3 rounded"><code>
+# Create and activate virtual environment
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-# Install backend dependencies
+# Install dependencies
 pip install -r backend/requirements.txt
 
 # Run the FastAPI server
 uvicorn backend.app:app --reload
 
-# API available at: http://localhost:8000/docs
-      </pre>
+# Visit: http://localhost:8000/docs
+      </code></pre>
     </section>
 
     <!-- Frontend Setup -->
-    <section class="mb-10">
-      <h2 class="text-xl font-semibold mb-2">Frontend Setup (Vue 3)</h2>
-      <pre class="bg-gray-100 p-4 rounded text-sm overflow-auto">
-# Navigate to the frontend folder
+    <section class="mb-5">
+      <h2 class="h5 mb-2">3. Frontend Setup (Vue 3)</h2>
+      <pre class="bg-light p-3 rounded"><code>
 cd frontend
-
-# Install dependencies
 npm install
-
-# Run development server
 npm run dev
 
-# App available at: http://localhost:5173
-      </pre>
+# Visit: http://localhost:5173
+      </code></pre>
     </section>
 
     <!-- Pretrained Model -->
-    <section class="mb-10">
-      <h2 class="text-xl font-semibold mb-2">Download Pretrained Model</h2>
-      <p>Ensure the trained PyTorch model file is placed in the correct directory.</p>
+    <section class="mb-5">
+      <h2 class="h5 mb-2">4. Download Pretrained Model</h2>
+      <p>Place the downloaded model file in the <code>/models</code> folder under the backend directory:</p>
       <a
         href="/models/best_model.pt"
-        class="inline-block bg-blue-600 text-white px-4 py-2 mt-2 rounded hover:bg-blue-700"
+        class="btn btn-primary mt-2"
         download
-      >
-        Download best_model.pt
-      </a>
-      <p class="mt-2 text-sm text-gray-600">Place this file in the <code>/models</code> folder inside the backend directory.</p>
+      >Download best_model.pt</a>
     </section>
 
-    <!-- GitHub Link -->
-    <section class="mb-10">
-      <h2 class="text-xl font-semibold mb-2">GitHub Repository</h2>
-      <p>The full project source code is available here:</p>
-      <a href="https://github.com/your-org/your-project" class="text-blue-600 underline">
-        github.com/your-org/your-project
+    <!-- GitHub Repository -->
+    <section class="mb-5">
+      <h2 class="h5 mb-2">5. GitHub Repository</h2>
+      <p>View the complete source code on GitHub:</p>
+      <a
+        href="https://github.com/mdinle/stroke-pain-app.git"
+        class="btn btn-outline-dark mt-2"
+        target="_blank"
+        rel="noopener"
+      >
+        View on GitHub
       </a>
     </section>
 
     <!-- Final Notes -->
-    <section class="mb-10">
-      <h2 class="text-xl font-semibold mb-2">Running the Full System</h2>
-      <ul class="list-disc ml-6">
-        <li>Ensure the backend is running before using the prediction page.</li>
-        <li>Frontend will call the backend API automatically for inference.</li>
-        <li>Use <code>/docs</code> endpoint in backend to test API routes (via Swagger).</li>
+    <section class="mb-5">
+      <h2 class="h5 mb-2">6. Final Notes</h2>
+      <ul class="list-unstyled ms-3">
+        <li>• Start the backend before launching the frontend.</li>
+        <li>• The frontend will connect to the backend automatically.</li>
+        <li>• Use <code>/docs</code> (e.g., http://localhost:8000/docs) to test API endpoints.</li>
       </ul>
     </section>
   </div>
 </template>
 
 <script setup>
-// No script logic needed
+// No logic needed
 </script>
 
 <style scoped>
-h1, h2 {
-  color: #1e293b;
+code {
+  font-family: monospace;
+  font-size: 0.9rem;
 }
 </style>

@@ -5,7 +5,7 @@ import PredictPage from '@/views/PredictPage.vue'
 import LoginForm from '@/components/LoginForm.vue'
 import RegisterForm from '@/components/RegisterForm.vue'
 import Docs from '@/views/DocsPage.vue'
-import Setup from '@/views/SetupPage.vue'  // case sensitive!
+import Setup from '@/views/SetupPage.vue'  
 
 const routes = [
   { path: '/', component: HomePage },

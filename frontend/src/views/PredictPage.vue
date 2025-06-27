@@ -1,6 +1,21 @@
 <template>
   <div class="container mt-4">
-    <h2 class="mb-4">Stroke & Pain Prediction</h2>
+    <h2 class="mb-2">Stroke & Pain Prediction</h2>
+
+    <!-- Description Section -->
+    <div class="mb-4 text-muted small">
+      <p>ℹ️ <strong>Stroke Model Output</strong><br>
+        Output is between 0 and 1.<br>
+        Closer to <strong>0</strong>: left side is affected<br>
+        Closer to <strong>1</strong>: right side is affected
+      </p>
+
+      <p>ℹ️ <strong>PSPI Score Scale</strong><br>
+        Pain score ranges from <strong>0 to 11</strong>.<br>
+        Closer to <strong>0</strong>: low pain or no pain<br>
+        Closer to <strong>10+</strong>: significant pain detected
+      </p>
+    </div>
 
     <!-- Toggle between Upload or Live Camera -->
     <div class="btn-group mb-3" role="group">
@@ -37,6 +52,7 @@
         <p><strong>Stroke Side:</strong> {{ result.stroke_side }}</p>
         <p><strong>Healthy Side:</strong> {{ result.healthy_side }}</p>
         <p><strong>Pain Score:</strong> {{ result.pain_score.toFixed(2) }}</p>
+        <p><strong>Pain Detection:</strong> {{ painAssessment }}</p>
       </div>
     </div>
 
@@ -45,6 +61,7 @@
       <p><strong>Stroke Side:</strong> {{ result.stroke_side }}</p>
       <p><strong>Healthy Side:</strong> {{ result.healthy_side }}</p>
       <p><strong>Pain Score:</strong> {{ result.pain_score.toFixed(2) }}</p>
+      <p><strong>Pain Detection:</strong> {{ painAssessment }}</p>
     </div>
 
     <!-- Error Message -->
@@ -53,7 +70,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, watch } from 'vue'
+import { ref, onMounted, onUnmounted, watch, computed } from 'vue'
 import * as faceapi from 'face-api.js'
 import { predictStrokeAndPain } from '@/api/predictApi'
 
@@ -135,6 +152,13 @@ async function detectAndPredict() {
   }
 }
 
+// Computed property for pain level
+const painAssessment = computed(() => {
+  if (!result.value) return ''
+  const score = result.value.pain_score
+  return score > 4.5 ? 'More pain detected' : 'No pain / low pain detected'
+})
+
 watch(mode, async (newMode) => {
   result.value = null
   error.value = null
@@ -165,3 +189,4 @@ canvas {
   pointer-events: none;
 }
 </style>
+``
