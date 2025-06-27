@@ -1,7 +1,6 @@
 <template>
   <div class="container mt-4">
-    <h2 class="mb-4">Stroke & Pain Prediction</h2>
-
+    <h2 class="mb-2">Stroke & Pain Prediction</h2>
     <div class="btn-group mb-3">
       <button
         class="btn"
@@ -36,6 +35,7 @@
 import { ref } from 'vue'
 import UploadForm from '@/components/UploadForm.vue'
 import LiveCamera from '@/components/LiveCamera.vue'
+
 
 const mode = ref('upload')
 </script>
