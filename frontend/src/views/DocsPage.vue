@@ -38,7 +38,8 @@ const docs = [
   { name: 'Models Overview', filename: 'model_overview.pdf' },
   { name: 'Technical Overview', filename: 'tec_overview.pdf' },
   { name: 'Pain detection code implementation', filename: 'pain_model_code_and_results.pdf' },
-  { name: 'Stroke detecting implementation code', filename: 'pain_model_code_and_results.pdf' } // Linked to same file
+  { name: 'Stroke Detecting Model Training', filename: 'stroke_model_annotated.pdf' },
+  { name: 'Stroke Models Comparison', filename: 'comparison.pdf' }
 ]
 
 const selectedDoc = ref(null)

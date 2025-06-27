@@ -79,6 +79,10 @@ npm run dev
         class="btn btn-primary mt-2"
         download
       >Download best_model.pt</a>
+
+      <p class="mt-2">
+        or look in github readme for the model links.
+      </p>
     </section>
 
     <!-- GitHub Repository -->
