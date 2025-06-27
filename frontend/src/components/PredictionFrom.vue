@@ -1,41 +1,41 @@
 <template>
-  <div class="container mt-5">
-    <div class="card p-4 shadow-sm">
-      <h3 class="mb-4">Upload Face Image</h3>
-      <input type="file" class="form-control mb-3" @change="handleFile" accept="image/jpeg" />
-      <button class="btn btn-primary" @click="submitImage" :disabled="!image">Submit</button>
-
-      <div v-if="result" class="alert alert-success mt-4">
-        <p><strong>Stroke Side:</strong> {{ result.stroke_side }}</p>
-        <p><strong>Healthy Side:</strong> {{ result.healthy_side }}</p>
-        <p><strong>Pain Score:</strong> {{ result.pain_score }}</p>
-      </div>
-
-      <div v-if="error" class="alert alert-danger mt-3">{{ error }}</div>
+  <div class="container mt-4">
+    <h2 class="mb-2">Stroke & Pain Prediction</h2>
+    <div class="btn-group mb-3">
+      <button
+        class="btn"
+        :class="mode === 'upload' ? 'btn-primary' : 'btn-outline-primary'"
+        @click="mode = 'upload'"
+      >Upload Image</button>
+      <button
+        class="btn"
+        :class="mode === 'camera' ? 'btn-primary' : 'btn-outline-primary'"
+        @click="mode = 'camera'"
+      >Live Camera</button>
     </div>
+
+    <UploadForm v-if="mode === 'upload'" />
+    <LiveCamera v-else />
+
+      <div class="mt-4 text-muted small d-flex gap-5 text-center justify-content-center">
+  <p>ℹ️ <strong>Stroke Model Output</strong><br>
+  Output is between 0 and 1.<br>
+  Closer to <strong>0</strong>: left side is affected<br>
+  Closer to <strong>1</strong>: right side is affected</p>
+
+  <p>ℹ️ <strong>PSPI Score Scale</strong><br>
+  Pain score ranges from <strong>0 to 11</strong>.<br>
+  Closer to <strong>0</strong>: low pain or no pain<br>
+  Closer to <strong>10+</strong>: significant pain detected</p>
+</div>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { predictStrokeAndPain } from '@/api/predictApi'
+import UploadForm from '@/components/UploadForm.vue'
+import LiveCamera from '@/components/LiveCamera.vue'
 
-const image = ref(null)
-const result = ref(null)
-const error = ref(null)
 
-function handleFile(event) {
-  image.value = event.target.files[0]
-  result.value = null
-  error.value = null
-}
-
-async function submitImage() {
-  try {
-    const response = await predictStrokeAndPain(image.value)
-    result.value = response
-  } catch (err) {
-    error.value = err.response?.data?.detail || err.message || 'API error'
-  }
-}
+const mode = ref('upload')
 </script>
